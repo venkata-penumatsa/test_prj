@@ -1,14 +1,29 @@
-import './globals.css'
+// import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs/app-beta";
+import Link from "next/link";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
-    </html>
-  )
+    <>
+      <ClerkProvider>
+        <html lang="en">
+          <head />
+          <body>
+            {" "}
+            <nav>
+              {" "}
+              <Link href={`/`}>Home</Link>
+              <br />
+              <br />
+              <Link href={`/sign-in`}>SignIn</Link>
+              <br />
+              <br />
+              <Link href={`/sign-up`}>SignUp</Link>
+            </nav>
+            <div>{children}</div>
+          </body>
+        </html>
+      </ClerkProvider>
+    </>
+  );
 }
