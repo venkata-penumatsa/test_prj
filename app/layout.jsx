@@ -1,29 +1,28 @@
 // import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs/app-beta";
+// import { ClerkProvider } from "@clerk/nextjs/app-beta";
 import Link from "next/link";
+import Providers from "./components/chakra-provider";
+import navbar from "./components/nav/navbar";
 
 export default function RootLayout({ children }) {
   return (
     <>
-      <ClerkProvider>
-        <html lang="en">
-          <head />
-          <body>
+      {/* <ClerkProvider> */}
+      <html lang="en">
+        <head />
+        <body>
+          {" "}
+          <nav>
             {" "}
-            <nav>
-              {" "}
-              <Link href={`/`}>Home</Link>
-              <br />
-              <br />
-              <Link href={`/sign-in`}>SignIn</Link>
-              <br />
-              <br />
-              <Link href={`/sign-up`}>SignUp</Link>
-            </nav>
-            <div>{children}</div>
-          </body>
-        </html>
-      </ClerkProvider>
+            {/* <Link href={`/`}>Home</Link> */}
+            <navbar />
+          </nav>
+          <div>
+            <Providers>{children}</Providers>
+          </div>
+        </body>
+      </html>
+      {/* </ClerkProvider> */}
     </>
   );
 }

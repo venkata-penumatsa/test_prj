@@ -2,8 +2,8 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { auth } from "@clerk/nextjs/app-beta";
-import { currentUser } from "@clerk/nextjs/app-beta";
+// import { auth } from "@clerk/nextjs/app-beta";
+// import { currentUser } from "@clerk/nextjs/app-beta";
 import { use } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
